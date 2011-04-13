@@ -5,14 +5,24 @@ namespace nothinbutdotnetstore
 {
     public class RawHandler : IHttpHandler
     {
+        private IProcessIncomingWebRequests requestProcessor;
+        private ICreateRequests requestCreator;
+
+        public RawHandler(IProcessIncomingWebRequests requestProcessor, ICreateRequests requestCreator)
+        {
+            this.requestProcessor = requestProcessor;
+            this.requestCreator = requestCreator;
+        }
+
         public void ProcessRequest(HttpContext context)
         {
-            throw new NotImplementedException();
+            requestProcessor.process(requestCreator.create_request_from(context));
         }
 
         public bool IsReusable
         {
-            get { throw new NotImplementedException(); }
+            get { return true; }
         }
+
     }
 }
