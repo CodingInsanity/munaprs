@@ -22,6 +22,7 @@ namespace nothinbutdotnetstore.specs
                 request = fake.an<IContainRequestDetails>();
                 all_commands = new List<ICanProcessOneUniqueRequest>();
                 depends.on<IEnumerable<ICanProcessOneUniqueRequest>>(all_commands);
+                depends.on<MissingCommandFactory>(() => null);
             };
 
             Because b = () =>
