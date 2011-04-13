@@ -15,7 +15,7 @@ namespace nothinbutdotnetstore
 
         public ICanProcessOneUniqueRequest get_the_command_that_can_handle(IContainRequestDetails request)
         {
-            return this.listOfAllCommands.ToList().FirstOrDefault(x => x.can_process(request));
+            return this.listOfAllCommands.ToList().First(x => x.can_process(request));
         }
     }
 }
