@@ -111,6 +111,7 @@
   <ItemGroup>
     <Compile Include="CommandRegistrySpecs.cs" />
     <Compile Include="ComposedCommandSpecs.cs" />
+    <Compile Include="EnsureSecurityCommandSpecs.cs" />
     <Compile Include="ICreateViewBoundToReportModelsSpecs.cs" />
     <Compile Include="ICanDisplayReportModelsSpecs.cs" />
     <Compile Include="LogTimingCommandSpecs.cs" />
